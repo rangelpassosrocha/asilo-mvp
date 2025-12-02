@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  background: #f1f9f4;
+  color: #193427;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a5c31;
+  color: #fff;
+  padding: 12px 24px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.topo nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.topo nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.usuario-logado {
+  margin-left: 16px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.btn-sair {
+  background: #c74a4a;
+}
+
+.conteudo {
+  max-width: 1000px;
+  margin: 24px auto 60px;
+  padding: 0 16px;
+}
+
+.rodape {
+  text-align: center;
+  padding: 14px;
+  background: #e0f1e5;
+  font-size: 13px;
+  color: #305842;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 6px rgba(12, 68, 36, 0.12);
+  margin-bottom: 18px;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  margin-bottom: 10px;
+  color: #0a5c31;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.card-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.card-form input,
+.card-form select,
+.card-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #c3ddcd;
+  font-size: 14px;
+}
+
+.card-form input:focus,
+.card-form select:focus,
+.card-form textarea:focus {
+  outline: 1px solid #0a5c31;
+  border-color: #0a5c31;
+}
+
+.btn {
+  display: inline-block;
+  background: #0c7b43;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #096236;
+}
+
+.alerta {
+  background: #ffe0e0;
+  color: #992424;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cabecalho-lista {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cabecalho-lista h2 {
+  color: #0a5c31;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+table thead {
+  background: #e2f3e8;
+}
+
+table th,
+table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #d7e7dd;
+  text-align: left;
+}
+
+table tr:nth-child(even) td {
+  background: #f7fbf8;
+}
+
+.link {
+  font-size: 14px;
+  color: #0c7b43;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

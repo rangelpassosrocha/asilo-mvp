@@ -1,0 +1,36 @@
+<section class="card">
+  <h1>Funcionários</h1>
+
+  <a href="/funcionarios/novo" class="btn">Novo Funcionário</a>
+
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cargo</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if (funcionarios.length === 0) { %>
+        <tr>
+          <td colspan="4">Nenhum funcionário cadastrado.</td>
+        </tr>
+      <% } %>
+
+      <% funcionarios.forEach(f => { %>
+        <tr>
+          <td><%= f.nome %></td>
+          <td><%= f.cargo %></td>
+          <td><%= f.telefone %></td>
+          <td>
+            <a class="btn-sm" href="/funcionarios/editar/<%= f.id %>">Editar</a>
+            <a class="btn-sm vermelho" href="/funcionarios/excluir/<%= f.id %>" onclick="return confirm('Deseja excluir?')">Excluir</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>

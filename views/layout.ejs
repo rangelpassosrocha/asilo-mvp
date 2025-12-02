@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistema de Gestão de Asilo</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="logo">Sistema de Gestão de Asilo</div>
+    <nav>
+      <% if (usuario) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/idosos">Idosos</a>
+        <a href="/medicacoes">Medicações</a>
+        <a href="/funcionarios">Funcionários</a>
+        <a href="/visitas">Visitas</a>
+        <% if (usuario.tipo === 'admin') { %>
+          <a href="/usuarios/novo">Novo Usuário</a>
+        <% } %>
+        <span class="usuario-logado"><%= usuario.nome %></span>
+        <a href="/logout" class="btn-sair">Sair</a>
+      <% } else { %>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <%- body %>
+  </main>
+
+  <footer class="rodape">
+    <span>Gestão simples para cuidado dos idosos.</span>
+  </footer>
+</body>
+</html>

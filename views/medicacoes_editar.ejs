@@ -1,0 +1,20 @@
+<section class="card card-form">
+  <h2>Editar Medicação</h2>
+
+  <form method="post" action="/medicacoes/editar/<%= medicacao.id %>">
+
+    <label>Nome</label>
+    <input type="text" name="nome" value="<%= medicacao.nome %>" required />
+
+    <label>Dosagem</label>
+    <input type="text" name="dosagem" value="<%= medicacao.dosagem %>" />
+
+    <label>Horário</label>
+    <input type="text" name="horario" value="<%= medicacao.horario %>" />
+
+    <label>Observações</label>
+    <textarea name="observacoes" rows="3"><%= medicacao.observacoes %></textarea>
+
+    <button type="submit" class="btn">Atualizar</button>
+  </form>
+</section>

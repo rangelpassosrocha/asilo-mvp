@@ -1,0 +1,20 @@
+<section class="card card-form">
+  <h2>Editar Idoso</h2>
+
+  <form method="post" action="/idosos/editar/<%= idoso.id %>">
+
+    <label>Nome</label>
+    <input type="text" name="nome" value="<%= idoso.nome %>" required />
+
+    <label>Data de nascimento</label>
+    <input type="date" name="data_nascimento" value="<%= idoso.data_nascimento ? idoso.data_nascimento.toISOString().slice(0,10) : '' %>" />
+
+    <label>Quarto</label>
+    <input type="text" name="quarto" value="<%= idoso.quarto %>" />
+
+    <label>Observações</label>
+    <textarea name="observacoes" rows="3"><%= idoso.observacoes %></textarea>
+
+    <button type="submit" class="btn">Atualizar</button>
+  </form>
+</section>

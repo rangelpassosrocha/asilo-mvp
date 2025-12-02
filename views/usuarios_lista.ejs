@@ -1,0 +1,36 @@
+<section class="card">
+  <h1>Usuários</h1>
+
+  <a href="/usuarios/novo" class="btn">Novo Usuário</a>
+
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Tipo</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if (usuarios.length === 0) { %>
+        <tr>
+          <td colspan="4">Nenhum usuário cadastrado.</td>
+        </tr>
+      <% } %>
+
+      <% usuarios.forEach(u => { %>
+        <tr>
+          <td><%= u.nome %></td>
+          <td><%= u.email %></td>
+          <td><%= u.tipo %></td>
+          <td>
+            <a class="btn-sm" href="/usuarios/editar/<%= u.id %>">Editar</a>
+            <a class="btn-sm vermelho" href="/usuarios/excluir/<%= u.id %>" onclick="return confirm('Excluir usuário?')">Excluir</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>

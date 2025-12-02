@@ -1,0 +1,36 @@
+<section class="card">
+  <h1>Lista de Idosos</h1>
+
+  <a href="/idosos/novo" class="btn">Novo Idoso</a>
+
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Nascimento</th>
+        <th>Quarto</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if (idosos.length === 0) { %>
+        <tr>
+          <td colspan="4">Nenhum idoso cadastrado.</td>
+        </tr>
+      <% } %>
+
+      <% idosos.forEach(i => { %>
+        <tr>
+          <td><%= i.nome %></td>
+          <td><%= i.data_nascimento ? i.data_nascimento.toISOString().slice(0,10) : "" %></td>
+          <td><%= i.quarto %></td>
+          <td>
+            <a class="btn-sm" href="/idosos/editar/<%= i.id %>">Editar</a>
+            <a class="btn-sm vermelho" href="/idosos/excluir/<%= i.id %>" onclick="return confirm('Deseja excluir?')">Excluir</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>

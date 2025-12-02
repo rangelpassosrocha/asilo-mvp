@@ -1,0 +1,36 @@
+<section class="card">
+  <h1>Medicações</h1>
+
+  <a href="/medicacoes/novo" class="btn">Nova Medicação</a>
+
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Dosagem</th>
+        <th>Horário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if (medicacoes.length === 0) { %>
+        <tr>
+          <td colspan="4">Nenhuma medicação cadastrada.</td>
+        </tr>
+      <% } %>
+
+      <% medicacoes.forEach(m => { %>
+        <tr>
+          <td><%= m.nome %></td>
+          <td><%= m.dosagem %></td>
+          <td><%= m.horario %></td>
+          <td>
+            <a class="btn-sm" href="/medicacoes/editar/<%= m.id %>">Editar</a>
+            <a class="btn-sm vermelho" href="/medicacoes/excluir/<%= m.id %>" onclick="return confirm('Deseja excluir?')">Excluir</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,38 @@
+<section class="card">
+  <h1>Visitas</h1>
+
+  <a href="/visitas/novo" class="btn">Novo Registro</a>
+
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Visitante</th>
+        <th>Idoso</th>
+        <th>Data</th>
+        <th>Horário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if (visitas.length === 0) { %>
+        <tr>
+          <td colspan="5">Nenhuma visita cadastrada.</td>
+        </tr>
+      <% } %>
+
+      <% visitas.forEach(v => { %>
+        <tr>
+          <td><%= v.visitante %></td>
+          <td><%= v.idoso %></td>
+          <td><%= v.data_visita ? v.data_visita.toISOString().slice(0,10) : "" %></td>
+          <td><%= v.horario %></td>
+          <td>
+            <a class="btn-sm" href="/visitas/editar/<%= v.id %>">Editar</a>
+            <a class="btn-sm vermelho" href="/visitas/excluir/<%= v.id %>" onclick="return confirm('Deseja excluir?')">Excluir</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
